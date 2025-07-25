@@ -1,5 +1,5 @@
 // src/pages/volunteer/VolunteerRegistrationPage.tsx
-import { date, z } from "zod";
+import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -110,7 +110,7 @@ export default function VolunteerRegistrationPage() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<VolunteerFormData>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       // Personal Info

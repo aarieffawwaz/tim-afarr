@@ -3,13 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { API_BASE_URL } from "@/config";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -62,13 +56,12 @@ const InterestList = ({
 }) => {
   if (!interests) return null;
 
-  const selectedInterests = Object.entries(interests).flatMap(
-    ([category, skills]) =>
-      Object.entries(skills)
-        .filter(([, hasSkill]) => hasSkill)
-        .map(([skill]) =>
-          skill.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
-        )
+  const selectedInterests = Object.entries(interests).flatMap(([, skills]) =>
+    Object.entries(skills)
+      .filter(([, hasSkill]) => hasSkill)
+      .map(([skill]) =>
+        skill.replace(/_/g, " ").replace(/\b\w/g, (l) => l.toUpperCase())
+      )
   );
 
   if (selectedInterests.length === 0) {

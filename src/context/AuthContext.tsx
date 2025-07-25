@@ -1,10 +1,5 @@
 // src/context/AuthContext.tsx
-import React, {
-  createContext,
-  useState,
-  useContext,
-  type ReactNode,
-} from "react";
+import { createContext, useState, useContext, type ReactNode } from "react";
 
 // Definisikan tipe untuk data user dan auth
 interface User {

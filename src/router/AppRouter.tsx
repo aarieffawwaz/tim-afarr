@@ -18,10 +18,6 @@ import ActivityFormPage from "@/pages/admin/ActivityFormPage"; // <-- Impor hala
 import MatchmakingListPage from "@/pages/admin/MatchmakingListPage";
 import MatchmakingDetailPage from "@/pages/admin/MatchmakingDetailPage";
 
-const PlaceholderPage = ({ title }: { title: string }) => (
-  <h1 className="text-3xl font-bold">{title}</h1>
-);
-
 const AppRouter = () => {
   return (
     <Routes>
